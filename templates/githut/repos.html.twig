@@ -1,0 +1,27 @@
+<div class="card card-body bg-light">
+    <div class="float-right">
+        <span class="badge badge-primary">Repositories: {{ repo_count }} </span>
+        <span class="badge badge-success">Most Stars: {{ most_stars }} </span>
+    </div>
+</div>
+                   
+<div class="card">
+   
+    <div class="card-header">
+        <h5 class="card-title">Repo List</h5>
+    </div>
+
+    <ul class="list-group list-group-flush">
+
+        {% for repo in repos %}
+            <li class="list-group-item">
+                {% include 'githut/repo.html.twig'  with repo %}
+            </li>
+        {% endfor %}
+
+    </ul>
+        
+    <div class="card-footer text-muted">
+        2 days ago
+    </div>
+</div>

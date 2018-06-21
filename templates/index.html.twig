@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-12">
+            <h2>Top Wallpapers For Abstract</h2>
+        </div>
+        
+        {% include 'inc/best-in-category.html.twig' with { 'images': abstract } %}
+          
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2>Random Images</h2>
+        </div>
+        {% for image in random %}
+            <div class="col-sm-6 col-md-3">
+                <div class="img-thumbnail">
+                    <img src="/images/{{ image }}" class="img-fluid"/>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div class="row">
+        <div class="col-12">
+            <h2>Summer Images</h2>
+        </div>
+        
+        {% include 'inc/best-in-category.html.twig' with { 'images': summer } %}
+        
+    </div>
+    
+    <div class="row">
+        <div class="col-12">
+            <h2>Winter Images</h2>
+        </div>
+        
+        {% include 'inc/best-in-category.html.twig' with { 'images': winter } %}
+        
+    </div>
+
+{% endblock %}

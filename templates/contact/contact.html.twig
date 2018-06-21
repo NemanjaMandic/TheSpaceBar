@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+    {{ form_start(our_form) }}
+    {{ form_widget(our_form) }}
+    
+    <div class="form-group row no-gutters">
+        <div class="col-6"></div>
+        <div class="col-6">
+             <input type="submit" value="Send" class="btn btn-success"/>
+        </div>
+    </div>
+   
+    {{ form_end(our_form) }}
+    
+    
+</div>
+{% endblock body %}

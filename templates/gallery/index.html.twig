@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+    <div class="row">
+        {% for image in images %}
+            <div class="col-sm-6 col-md-3">
+                <a href="{{ path( 'show_image' ) }}">
+                    <img src="images/{{image}}" alt="" class="img-fluid">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+   
+        {{ knp_pagination_render(images) }}
+    
+        
+      
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-sm-3">
+            
+           {{ render(controller(
+                'App\\Controller\\GitHutController::profile', { 'username': username }
+            )) }}
+            
+        </div>
+           <div class="col-sm-9">
+               {{ include('githut/repos.html.twig') }}
+                {{ render(controller(
+                'App\\Controller\\GitHutController::repos', { 'username': username }
+            )) }}
+           </div>
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+         
+            .grid{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                grid-gap: 20px;
+            }
+            
+            .grid div{
+                border: 1px solid rgb(0,95,107);
+                border-radius: 3px;
+                background-color: rgba(0,95,107,0.8);
+                padding: 1.2em;
+                color: #fff;
+            }
+
+        </style>
+        
+      
+
+    </head>
+    <body>
+        
+        <div class="grid">
+            <div>One</div>
+            <div>Two</div>
+            <div>Three</div>
+            <div>Four</div>
+            <div>Five</div>
+            <div>Six</div>
+            <div>Seven</div>
+            <div>Eight</div>
+        </div>
+        
+        <div id="app">
+            <h2></h2>
+        </div>
+    <script>
+            
+        var dropdown = document.querySelectorAll('.dropdown');
+        
+        var dropdownArray = Array.prototype.slice.call(dropdown, 0);
+        
+        dropdownArray.forEach(function(el){
+            
+            var button = el.querySelector('a[data-toggle="dropdown"]'),
+                menu = el.querySelector('.dropdown-menu'),
+                arrow = button.querySelector('i.icon-arrow');
+                
+              button.onclick = function(event){
+                  if(!menu.hasClass('show')){
+                      menu.classList.add('show');
+                      menu.classList.remove('hide');
+                      arrow.classList.add('open');
+                      arrow.classList.remove('close');
+                      event.preventDefault();
+                  }else{
+                      menu.classList.remove('show');
+                      menu.classList.add('hide'); 
+                      arrow.classList.remove('open');
+                      arrow.classList.add('close');
+                      
+                      event.preventDefault();
+                  }
+              }  
+        });
+            
+            
+            Element.prototype.hasClass = function(className) {
+    return this.className && new RegExp("(^|\\s)" + className + "(\\s|$)").test(this.className);
+};
+    </script>
+        
+     <!-- development version, includes helpful console warnings -->
+       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
