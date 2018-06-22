@@ -30,6 +30,11 @@ class Wallpaper
      * @ORM\Column(type="integer")
      */
     private $width;
+    
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $height;
 
     public function getId()
     {
@@ -71,4 +76,15 @@ class Wallpaper
 
         return $this;
     }
+    
+    public function getHeight(): ?int{
+        return $this->height;
+    }
+    
+    public function setHeight(int $height): self{
+        $this->height = $height;
+        
+        return $this;
+    }
+        
 }
